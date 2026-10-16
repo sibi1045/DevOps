@@ -1,7 +1,7 @@
 # DevOps
 1. About Jenkins
 Jenkins is an open-source automation server used to automate software building, testing, and deployment. It is widely used in CI/CD pipelines to reduce manual work and deliver software changes faster.
-Key points to remember
+# Key points to remember**
 - Type: Open-source automation server.
 - Purpose: Automates build, test, and deployment processes.
 - Language: Jenkins pipelines are commonly written using Groovy-based Pipeline syntax.
@@ -10,7 +10,7 @@ Key points to remember
 - Configuration file: Jenkinsfile (for Pipeline-as-Code).
 - Plugins: Extend Jenkins functionality by integrating tools such as Git, Maven, Docker, and SonarQube.
 - Supported platforms: Linux, Windows, macOS, and containers.
-2. What is CI/CD?
+# 2. What is CI/CD?**
 - CI — Continuous Integration: Developers frequently push code changes to a shared repository. Jenkins can automatically retrieve the code and run builds and tests.
 - CD — Continuous Delivery: Automatically prepares and validates the application for release.
 - CD — Continuous Deployment: Automatically deploys validated changes to production without requiring a separate manual release approval.
@@ -18,7 +18,7 @@ Key points to remember
 ## Jenkins Installation
 ### Step 1: Install Java
 #### Verify Java Version
-4.## Jenkins Components
+#  Jenkins Components
 
 - Controller
 - Agent
@@ -26,7 +26,7 @@ Key points to remember
 - Jenkinsfile
 - Plugins
 
-5.3. Jenkins Workflow
+# 5.3. Jenkins Workflow**
 
 Developer pushes code to GitHub.
 
@@ -39,7 +39,7 @@ Jenkins builds and tests the application.
 Jenkins deploys the application.
 
 
-6.How jenkins pulls code from github
+# 6.How jenkins pulls code from github**
   Step-by-step explanation
 1. Configure GitHub in Jenkins: Create a Pipeline job and provide the GitHub repository URL.
 2. Configure credentials: If the repository is private, configure a suitable credential, such as a personal access token or SSH key, in Jenkins.
@@ -47,10 +47,34 @@ Jenkins deploys the application.
 4. Pull the code: The Jenkins Git plugin checks out the configured branch into the workspace.
 5. Execute the pipeline: Jenkins runs the commands in the Jenkinsfile.
 
-7.Whats happen internally 
+# 7.Whats happen internally **
 
 1.First checkout: Git typically clones the repository into the workspace.
 
 2.Subsequent builds: Jenkins can fetch new changes and check out the required commit instead of cloning everything from scratch.
 
 3.Webhook: It notifies Jenkins that a change occurred; it does not transfer the source code itself. Jenkins retrieves the code after the job starts.
+
+
+# 8.Jenkins Internal flow 
+Controller: Manages Jenkins jobs and schedules builds.
+
+
+
+Agent: Executes the actual pipeline steps.
+
+
+
+SSH key: Allows the controller to authenticate to the agent.
+
+
+
+Credentials: Securely stores the private key in Jenkins.
+
+
+
+Label: Identifies which agent a pipeline should use.
+
+
+
+Executors: Determine how many tasks can run concurrently on a node.
